@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GetHub">
         <activity
+            android:name=".activities.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.MainActivity"
             android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

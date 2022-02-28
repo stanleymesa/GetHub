@@ -13,14 +13,19 @@
         layout="@layout/action_bar"/>
 
     <ScrollView
+        android:id="@+id/scroll"
         app:layout_constraintTop_toBottomOf="@id/include_action_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_user"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_row_user"/>
 
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
