@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,228 +9,23 @@
     android:background="@drawable/gradient_splash"
     tools:context=".activities.DetailActivity">
 
-    <include
-        android:id="@+id/include_action_bar"
-        layout="@layout/action_bar_back"/>
-
-    <ScrollView
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/darknavy"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/detail_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_ios_new_24"/>
 
-            <ImageView
-                android:id="@+id/iv_avatar"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="@id/gl_start"
-                app:layout_constraintRight_toRightOf="@id/gl_end"
-                android:layout_marginTop="16dp"
-                tools:src="@tools:sample/avatars"
-                android:layout_width="150dp"
-                android:layout_height="150dp"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <TextView
-                android:id="@+id/tv_username"
-                app:layout_constraintLeft_toLeftOf="@id/iv_avatar"
-                app:layout_constraintRight_toRightOf="@id/iv_avatar"
-                app:layout_constraintTop_toBottomOf="@id/iv_avatar"
-                android:layout_marginTop="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="JK_Kennedy"
-                android:fontFamily="@font/quicksand_medium"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_name"
-                app:layout_constraintLeft_toLeftOf="@id/iv_avatar"
-                app:layout_constraintRight_toRightOf="@id/iv_avatar"
-                app:layout_constraintTop_toBottomOf="@id/tv_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="John Kemal Kennedy"
-                android:fontFamily="@font/quicksand"
-                android:textSize="21sp"
-                android:textColor="@color/gray"/>
-
-            <TextView
-                android:id="@+id/tv_repo"
-                app:layout_constraintLeft_toLeftOf="@id/tv_repo_title"
-                app:layout_constraintRight_toRightOf="@id/tv_repo_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
-                android:layout_marginTop="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="45"
-                android:fontFamily="@font/quicksand_medium"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_followers"
-                app:layout_constraintLeft_toLeftOf="@id/tv_followers_title"
-                app:layout_constraintRight_toRightOf="@id/tv_followers_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
-                android:layout_marginTop="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="2737"
-                android:fontFamily="@font/quicksand_medium"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_following"
-                app:layout_constraintLeft_toLeftOf="@id/tv_following_title"
-                app:layout_constraintRight_toRightOf="@id/tv_following_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_name"
-                android:layout_marginTop="16dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="600"
-                android:fontFamily="@font/quicksand_medium"
-                android:textSize="30sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_repo_title"
-                app:layout_constraintLeft_toLeftOf="@id/gl_start"
-                app:layout_constraintRight_toLeftOf="@id/tv_followers_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_repo"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/repository"
-                android:fontFamily="@font/quicksand"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_followers_title"
-                app:layout_constraintLeft_toRightOf="@id/tv_repo_title"
-                app:layout_constraintRight_toLeftOf="@id/tv_following_title"
-                app:layout_constraintTop_toBottomOf="@id/tv_followers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/followers"
-                android:fontFamily="@font/quicksand"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/tv_following_title"
-                app:layout_constraintLeft_toRightOf="@id/tv_followers_title"
-                app:layout_constraintRight_toRightOf="@id/gl_end"
-                app:layout_constraintTop_toBottomOf="@id/tv_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/following"
-                android:fontFamily="@font/quicksand"
-                android:textSize="18sp"
-                android:textColor="@color/white"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="36dp"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="36dp"/>
-
-            <RelativeLayout
-                android:id="@+id/frame"
-                app:layout_constraintLeft_toLeftOf="@id/gl_start"
-                app:layout_constraintRight_toRightOf="@id/gl_end"
-                app:layout_constraintTop_toBottomOf="@id/tv_followers_title"
-                app:layout_constraintBottom_toBottomOf="@id/frame_space"
-                android:layout_marginTop="16dp"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@drawable/item_row_background"/>
+    <include
+        android:id="@+id/include_content_detail"
+        layout="@layout/content_detail"/>
 
 
-            <ImageView
-                android:id="@+id/iv_location"
-                app:layout_constraintTop_toTopOf="@id/tv_location"
-                app:layout_constraintBottom_toBottomOf="@id/tv_location"
-                app:layout_constraintLeft_toLeftOf="@id/frame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/ic_baseline_location_on_24"/>
-
-            <TextView
-                android:id="@+id/tv_location"
-                app:layout_constraintTop_toBottomOf="@id/tv_followers_title"
-                app:layout_constraintLeft_toRightOf="@id/iv_location"
-                app:layout_constraintRight_toRightOf="@id/frame"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/quicksand"
-                android:textSize="18sp"
-                tools:text="Semarang, Jawa Tengah, Indonesia"/>
-
-            <ImageView
-                android:id="@+id/iv_company"
-                app:layout_constraintTop_toTopOf="@id/tv_company"
-                app:layout_constraintBottom_toBottomOf="@id/tv_company"
-                app:layout_constraintLeft_toLeftOf="@id/frame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:src="@drawable/ic_baseline_business_center_24"/>
-
-            <TextView
-                android:id="@+id/tv_company"
-                app:layout_constraintTop_toBottomOf="@id/tv_location"
-                app:layout_constraintLeft_toRightOf="@id/iv_company"
-                app:layout_constraintRight_toRightOf="@id/frame"
-                android:minLines="2"
-                android:gravity="center|start"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:textColor="@color/white"
-                android:fontFamily="@font/quicksand"
-                android:textSize="18sp"
-                tools:text="PT Stanley Mesa"/>
-
-            <Space
-                android:id="@+id/frame_space"
-                app:layout_constraintTop_toBottomOf="@id/tv_company"
-                app:layout_constraintLeft_toLeftOf="@id/gl_start"
-                app:layout_constraintRight_toRightOf="@id/gl_end"
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-            
-            <Space
-                app:layout_constraintTop_toBottomOf="@id/frame"
-                app:layout_constraintLeft_toLeftOf="@id/gl_start"
-                app:layout_constraintRight_toRightOf="@id/gl_end"
-                android:layout_width="0dp"
-                android:layout_height="200dp"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </ScrollView>
-
-
-
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
