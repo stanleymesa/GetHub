@@ -1,18 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.GetHub" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.GetHub" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="android:windowDisablePreview">true</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/navy</item>
+        <item name="colorPrimary">@color/softGray</item>
         <item name="colorPrimaryVariant">@color/navy</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/darknavy</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/gray</item>
+        <item name="colorSecondary">@color/white</item>
         <item name="colorSecondaryVariant">@color/white</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/red</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/darknavy</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/softGray</item>
         <!-- Customize your theme here. -->
-        <item name="android:navigationBarColor">@color/navy</item>
+        <item name="background">@drawable/gradient_splash_day</item>
+        <item name="backgroundTint">@color/darknavy</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyOverflowButton</item>
+    </style>
+
+    <style name="MyOverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_baseline_settings_24</item>
+        <item name="contentDescription">@string/settings</item>
+        <item name="android:tint">?attr/colorOnPrimary</item>
     </style>
 
 </resources>

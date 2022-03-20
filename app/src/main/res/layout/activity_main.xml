@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_splash"
-    tools:context=".activities.MainActivity">
+    android:background="?attr/background"
+    tools:context=".ui.activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/darknavy"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:backgroundTint="?attr/colorPrimary">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/main_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/main_menu"/>
+            app:menu="@menu/main_menu"
+            app:titleTextColor="?attr/colorOnPrimary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include
         android:id="@+id/include_content_main"
-        layout="@layout/content_main"/>
+        layout="@layout/content_main" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

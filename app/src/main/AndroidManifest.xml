@@ -13,16 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GetHub">
         <activity
-            android:name=".activities.FollowersActivity"
+            android:name=".ui.activities.FavoriteActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.DetailActivity"
+            android:name=".ui.activities.FollowersActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".ui.activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".ui.activities.MainActivity"
+            android:launchMode="singleTask"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
